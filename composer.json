@@ -1,0 +1,51 @@
+{
+    "name": "husail/edi-sdk",
+    "description": "Generic SDK for reading, writing and validating fixed-width EDI files.",
+    "keywords": [
+        "edi",
+        "cnab",
+        "edi-parser",
+        "edi-writer"
+    ],
+    "homepage": "https://github.com/husail/edi-sdk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Victor Danilo",
+            "email": "victordanilo_cs@live.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "symfony/yaml": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "pestphp/pest": "^4.7",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Husail\\EdiSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Husail\\EdiSdk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
